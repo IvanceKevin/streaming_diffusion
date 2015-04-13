@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:m="http://my-music.org#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://my-music.org#Time">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Title">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub308bL28C11">
+    <rdf:_3>Pouvoir</rdf:_3>
+    <rdf:_1>Mystique</rdf:_1>
+    <rdf:_6>Energie</rdf:_6>
+    <rdf:_4>Voyage</rdf:_4>
+    <rdf:_5>Liberté</rdf:_5>
+    <rdf:_2>Force</rdf:_2>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub308bL40C11">
+    <rdf:_2>Gitan</rdf:_2>
+    <rdf:_8>Balkan</rdf:_8>
+    <rdf:_4>Joie</rdf:_4>
+    <rdf:_3>Voyage</rdf:_3>
+    <rdf:_1>Piano</rdf:_1>
+    <rdf:_6>Espagne</rdf:_6>
+    <rdf:_5>Bonheur</rdf:_5>
+    <rdf:_7>Heureux</rdf:_7>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f9b4f078d5f10471a828bef6cc5008743b1">
+    <rdf:type rdf:resource="http://my-music.org#Song"/>
+    <m:Title>Luiz</m:Title>
+    <m:Keyword rdf:nodeID="ub308bL28C11"/>
+    <m:Description>Musique libre de droit dans le style electro, avec synthétiseurs numériques, boites à rythme et synthétiseurs analogiques. Un grand travail de sound design a été réalisé sur ce titre, avec l'utilisation de filtres résonants, de plusieurs techniques de synthèse sonore. Pour la partie acoustique et électrique, notons l'utilisation de bruitages de pièces métalliques tout au long du morceau, et l'utilisation de deux guitares éléctriques avec effet de saturation OverDrive.</m:Description>
+    <m:Time>4.11</m:Time>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#KeyWord">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f9b4f078d5f10471a828bef6cc5008743b3">
+    <m:Title>GypsyPno</m:Title>
+    <rdf:type rdf:resource="http://my-music.org#Song"/>
+    <m:Time>2.26</m:Time>
+    <m:Description>MMusique libre de droit au piano. Musique avec des sonorités gypsy, un tempo rythmé empreinté aux musiques balkaniques, et donnant une impression de fête, de joie. Elle illustrera à merveille des scènes de fête, scènes nocturne, la passion, la légèreté et la joie de vivre.</m:Description>
+    <m:Keyword rdf:nodeID="ub308bL40C11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub308bL34C11">
+    <rdf:_1>Piano</rdf:_1>
+    <rdf:_3>Pureté</rdf:_3>
+    <rdf:_6>Paix</rdf:_6>
+    <rdf:_5>Tristesse</rdf:_5>
+    <rdf:_7>Amour</rdf:_7>
+    <rdf:_4>Regrets</rdf:_4>
+    <rdf:_2>Nostalgie</rdf:_2>
+    <rdf:_8>Solitude</rdf:_8>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f9b4f078d5f10471a828bef6cc5008743b2">
+    <rdf:type rdf:resource="http://my-music.org#Song"/>
+    <m:Time>2.04</m:Time>
+    <m:Title>Hilouine</m:Title>
+    <m:Description>Musique libre de droit au piano. Musique douce et nostalgique, un tempo lent en 3 temps ( valse ), avec un changement fréquent d'harmonie, et donnant une impression de pureté. Elle illustrera à merveille des scènes nostalgiques ou tristes, des moments de paix et de sérenité.</m:Description>
+    <m:Keyword rdf:nodeID="ub308bL34C11"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Song">
+    <rdfs:subClassOf rdf:resource="http://my-music.org#Multimedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Description">
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Multimedia">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Keyword">
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+  </rdf:Description>
+</rdf:RDF>
+
