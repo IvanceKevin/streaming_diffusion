@@ -48,9 +48,9 @@ Le fichier N3 est : base.n3
 
 Adresse : 
 	
-	- Conversion : [RDF-Translator](http://rdf-translator.appspot.com/)
+- Conversion : [RDF-Translator](http://rdf-translator.appspot.com/)
 
-	- Validateur : [W3](http://www.w3.org/RDF/Validator/)
+- Validateur : [W3](http://www.w3.org/RDF/Validator/)
 
 On peut observer les différents noeuds RDF sur le site W3 en choisissant l'option **Graph** 
 
@@ -58,3 +58,4 @@ On peut observer les différents noeuds RDF sur le site W3 en choisissant l'opti
 
 Nous allons maintenant travailler sur les méta-données en format RDF pour chaque fichier son et les insérer dans les fichiers WAV correspondant.
 On utilisera la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/) pour ajouter au format XMP les méta-données dans les fichier WAV.
+
