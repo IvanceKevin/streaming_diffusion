@@ -1,0 +1,41 @@
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix music:   <http://www.musicscreen.be/musique-libre-de-droit/Catalogue#>.
+@prefix m:		 <http://my-music.org#>.
+
+m:Multimedia a rdfs:Class.
+m:Song rdfs:subClassOf m:Multimedia.
+
+m:Title a rdf:Property.
+m:Title rdfs:domain m:Song.
+m:Title rdfs:range rdfs:Literal.
+
+m:Time a rdf:Property.
+m:Time rdfs:domain m:Song.
+m:Time rdfs:range rdfs:Literal.
+	
+m:Description a rdf:Property.
+m:Description rdfs:domain m:Song.
+m:Description rdfs:domain rdfs:Literal.
+
+m:KeyWord a rdf:Bag.
+m:Keyword rdfs:domain m:Song.
+
+_:s1 a m:Song;
+m:Title "Luiz";
+m:Description "Musique libre de droit dans le style electro, avec synthétiseurs numériques, boites à rythme et synthétiseurs analogiques. Un grand travail de sound design a été réalisé sur ce titre, avec l'utilisation de filtres résonants, de plusieurs techniques de synthèse sonore. Pour la partie acoustique et électrique, notons l'utilisation de bruitages de pièces métalliques tout au long du morceau, et l'utilisation de deux guitares éléctriques avec effet de saturation OverDrive.";
+m:Time "4.11";
+m:Keyword [rdf:_1 "Mystique"; rdf:_2 "Force"; rdf:_3 "Pouvoir"; rdf:_4 "Voyage"; rdf:_5 "Liberté"; rdf:_6 "Energie";].
+
+_:s2 a m:Song;
+m:Title "Hilouine";
+m:Description "Musique libre de droit au piano. Musique douce et nostalgique, un tempo lent en 3 temps ( valse ), avec un changement fréquent d'harmonie, et donnant une impression de pureté. Elle illustrera à merveille des scènes nostalgiques ou tristes, des moments de paix et de sérenité.";
+m:Time "2.04";
+m:Keyword [rdf:_1 "Piano"; rdf:_2 "Nostalgie"; rdf:_3 "Pureté"; rdf:_4 "Regrets"; rdf:_5 "Tristesse"; rdf:_6 "Paix"; rdf:_7 "Amour"; rdf:_8 "Solitude";].
+
+_:s3 a m:Song;
+m:Title "GypsyPno";
+m:Description "MMusique libre de droit au piano. Musique avec des sonorités gypsy, un tempo rythmé empreinté aux musiques balkaniques, et donnant une impression de fête, de joie. Elle illustrera à merveille des scènes de fête, scènes nocturne, la passion, la légèreté et la joie de vivre.";
+m:Time "2.26";
+m:Keyword [rdf:_1 "Piano"; rdf:_2 "Gitan"; rdf:_3 "Voyage"; rdf:_4 "Joie"; rdf:_5 "Bonheur"; rdf:_6 "Espagne"; rdf:_7 "Heureux"; rdf:_8 "Balkan";].
