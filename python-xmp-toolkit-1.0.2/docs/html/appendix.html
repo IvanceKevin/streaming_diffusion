@@ -1,0 +1,225 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Appendix &mdash; Python XMP Toolkit v1.0.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python XMP Toolkit v1.0.2 documentation" href="index.html" />
+    <link rel="prev" title="Developers" href="developers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="developers.html" title="Developers"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python XMP Toolkit v1.0.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="appendix">
+<h1>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul>
+<li><p class="first">The TIFF smart handler have troubles reading the XMP packet correctly - this is either due
+to Exempi 2.1.1 being installed via MacPorts or it is a 64-bit issue. To circumvent the problem,
+please use packet scanning when opening a TIFF file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">xmp</span> <span class="o">=</span> <span class="n">XMPFiles</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s">&quot;../test.tif&quot;</span><span class="p">,</span> <span class="n">open_usepacketscanning</span><span class="o">=</span><span class="bp">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul class="simple">
+<li>Project website &#8211; <a class="reference external" href="http://code.google.com/p/python-xmp-toolkit/">http://code.google.com/p/python-xmp-toolkit/</a></li>
+<li>XMP &#8211; <a class="reference external" href="http://www.adobe.com/products/xmp/">http://www.adobe.com/products/xmp/</a></li>
+<li>Exempi &#8211; <a class="reference external" href="http://libopenraw.freedesktop.org/wiki/Exempi">http://libopenraw.freedesktop.org/wiki/Exempi</a></li>
+<li>Adobe XMP Toolkit &#8211; <a class="reference external" href="http://www.adobe.com/devnet/xmp/">http://www.adobe.com/devnet/xmp/</a></li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary docutils">
+<dt id="term-xmp">XMP</dt>
+<dd>eXtensible Metadata Platform</dd>
+</dl>
+</div>
+<div class="section" id="todo-list">
+<h2>TODO list<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (c) 2008-2009, European Space Agency &amp; European Southern Observatory (ESA/ESO)</p>
+<p>Copyright (c) 2008-2009, CRS4 - Centre for Advanced Studies, Research and Development in Sardinia
+All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:</p>
+<blockquote>
+<ul class="simple">
+<li>Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.</li>
+<li>Neither the name of the European Space Agency, European Southern
+Observatory, CRS4 nor the names of its contributors may be used to endorse or
+promote products derived from this software without specific prior
+written permission.</li>
+</ul>
+</blockquote>
+<p>THIS SOFTWARE IS PROVIDED BY ESA/ESO AND CRS4 <a href="#id1"><span class="problematic" id="id2">``</span></a>AS IS&#8217;&#8217; AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+EVENT SHALL ESA/ESO BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+<div class="section" id="changes">
+<h2>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Release 1.0.2 ( June 21, 2011 )</dt>
+<dd><ul class="first last simple">
+<li>Fixed python 2.5 issue (ctypes.c_bool are not available in 2.5, so it was changed to ctypes.c_int).</li>
+</ul>
+</dd>
+<dt>Release 1.0.1 ( April 11, 2011 )</dt>
+<dd><ul class="first last simple">
+<li>Fixed issue on 32-bit systems.</li>
+</ul>
+</dd>
+<dt>Release 1.0 ( March 31, 2010 )</dt>
+<dd><ul class="first last simple">
+<li>Known issue #7 documented - issue with TIFF smart handler.</li>
+<li>Fixed issue #15 - 64-bit issues on Linux and Mac.</li>
+<li>Fixed issue #11 - Typo in does_property_exist.</li>
+<li>Thanks to marialaura.clemente for bug reports and patches.</li>
+</ul>
+</dd>
+<dt>Release 1.0rc2 (Feburary 16, 2010)</dt>
+<dd><ul class="first last simple">
+<li>Fixed issue #4, #5 and related to XMPIterator, file_to_dict and object_to_dict.</li>
+<li>Fixed issue in file_to_dict which didn&#8217;t pass parameters to XMPFiles.open_file() properly.</li>
+<li>Fixed issue #9 file_to_dict now raises IOError instead of returning
+an empty dictionary for non-existing files. (<em>backward incompatible</em>)</li>
+<li>Fixed issue #8 - spelling mistake in function call in XMPMeta.append_array_items</li>
+<li>Based on Exempi 2.1.1 and Adobe XMP Toolkit 4.4.2</li>
+<li>Thanks to olsenpk, pitymushroom, rmarianski, cfarrell1980 for bug reports and patches</li>
+</ul>
+</dd>
+<dt><strong>Release 1.0rc1 (March 6, 2009)</strong></dt>
+<dd><ul class="first last simple">
+<li>Backwards incompatible with previous releases.</li>
+<li>Based on Exempi 2.1.0 and Adobe XMP Toolkit 4.4.2</li>
+<li>Initialise and Terminate should no longer be called before usage.</li>
+</ul>
+</dd>
+<dt><strong>Release 1.0beta1 (July 6, 2008)</strong></dt>
+<dd><ul class="first last simple">
+<li>First public release.</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Appendix</a><ul>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+<li><a class="reference internal" href="#todo-list">TODO list</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+<li><a class="reference internal" href="#changes">Changes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="developers.html"
+                        title="previous chapter">Developers</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/appendix.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="developers.html" title="Developers"
+             >previous</a> |</li>
+        <li><a href="index.html">Python XMP Toolkit v1.0.2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008-2009 European Space Agency, European Southern Observatory AND CRS4 - Centre for Centre for Advanced Studies, Research and Development in Sardinia.
+      Last updated on Jun 21, 2011.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.6.
+    </div>
+  </body>
+</html>

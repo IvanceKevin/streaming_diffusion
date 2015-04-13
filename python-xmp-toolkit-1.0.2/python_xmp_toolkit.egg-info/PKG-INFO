@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: python-xmp-toolkit
+Version: 1.0.2
+Summary: Python XMP Toolkit for working with metadata.
+Home-page: http://code.google.com/p/python-xmp-toolkit/
+Author: Lars Holm Nielsen, Federico Caboni & Amit Kapadia
+Author-email: lnielsen@eso.org,federico.caboni@me.com,akapad@gmail.com
+License: New BSD License
+Download-URL: http://code.google.com/p/python-xmp-toolkit/downloads/list
+Description: Python XMP Toolkit is a library for working with XMP metadata, as well as reading/writing XMP metadata stored in many different file formats.
+Platform: UNKNOWN
