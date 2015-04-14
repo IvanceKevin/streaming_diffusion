@@ -8,6 +8,7 @@ MANIFEST.in
 Makefile
 README
 VERSION
+setup.cfg
 setup.py
 .settings/org.eclipse.core.resources.prefs
 docs/html/.buildinfo

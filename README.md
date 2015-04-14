@@ -28,6 +28,8 @@ Pour les convertir en WAV nous avons utilisés un site en ligne : [audio.online-
 
 Nous avons regroupé les musiques dans le dossier **Audio**.
 
+Un fichier **WAV** se compose d’un entête qui contient pas mal de meta données. Cet entête a été optimisé pour prendre peu de place.
+
 ## DefinitionRDF
 
 Nous avons définit les **données importantes** pour les musiques : 
@@ -59,3 +61,11 @@ On peut observer les différents noeuds RDF sur le site W3 en choisissant l'opti
 Nous allons maintenant travailler sur les méta-données en format RDF pour chaque fichier son et les insérer dans les fichiers WAV correspondant.
 On utilisera la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/) pour ajouter au format XMP les méta-données dans les fichier WAV.
 
+Comment écrire les données est simple
+
+Ecrire "RIFF".
+enregistrer la position de fichier.
+Ecrire 4 octets de 0 de
+Ecrire tous les morceaux existants. Gardez nombre d'octets écrits.
+Ajoutez votre morceau. Soyez sûr d'obtenir le droit de chunksize. Gardez nombre d'octets écrits.
+rembobiner à la position sauvegardée. Ecrire la nouvelle taille (comme un nombre de 32 bits).
