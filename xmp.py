@@ -3,23 +3,26 @@
 
 __author__ = 'ivance kevin & briton paul'
 
+
 from libxmp import *
 from libxmp.core import XMPIterator, XMPMeta
 from libxmp.consts import *
 import libxmp
+import os
 
-os.listdir("./Audio");
+fileListWAV=os.listdir("./Audio/");
 
-# Read file
-xmpfile = XMPFiles( file_path="./Audio/GypsyPno.wav", open_forupdate=True );
+for f in fileListWAV :
+	name=f.split('.', 1 )[0];
+	# Read file
+	xmpfile = XMPFiles( file_path="./Audio/"+name+".wav", open_forupdate=True );
 
-# Get XMP from file.
-xmp = xmpfile.get_xmp();
+	# Get XMP from file.
+	xmp = xmpfile.get_xmp();
 
-# Create Meta donnees
-#set localise text
-#bag ( array item)
-meta = libxmp.XMPMeta();
+	# Create Meta donnees
+
+	meta = libxmp.XMPMeta();
 
 ## Manque la durée et mettre à jour les tags
 
@@ -30,31 +33,31 @@ meta = libxmp.XMPMeta();
 #print 'bag1 = ',meta.append_array_item(libxmp.consts.XMP_NS_DC,'subject','pop',{'prop_value_is_array': libxmp.consts.XMP_PROP_VALUE_IS_ARRAY})
 #print 'bag2 = ',meta.append_array_item(libxmp.consts.XMP_NS_DC, 'subject','electro')
 
-#print meta
-fic = open('./GypsyPno.rdf');
-meta.parse_from_str(fic.read(), xmpmeta_wrap=False, input_encoding=None);
+	#print meta
+	fic = open('./Description/'+name+'.rdf');
+	meta.parse_from_str(fic.read(), xmpmeta_wrap=False, input_encoding=None);
 
-print 'file could be updated = ', xmpfile.can_put_xmp(meta);
+	print 'file could be updated = ', xmpfile.can_put_xmp(meta);
 
-xmpfile.put_xmp(meta);
-xmpfile.close_file(close_flags=1);
+	xmpfile.put_xmp(meta);
+	xmpfile.close_file(close_flags=1);
 
 #Réouverture du fichier et extraction xmp meta-données
 
-xmpfile = XMPFiles( file_path="./Audio/GypsyPno.wav", open_forupdate=True );
-# Get XMP from file.
-xmp = xmpfile.get_xmp();
-print xmp
+# xmpfile = XMPFiles( file_path="./Audio/GypsyPno.wav", open_forupdate=True );
+# # Get XMP from file.
+# xmp = xmpfile.get_xmp();
+# print xmp
 
-fichierXMP = 'GypsyPno.xmp';
-# création et ouverture du fichier test.txt en mode write 'w' (écriture)
-# si le fichier test.txt existe déjà, il est écrasé
-Fichier = open(fichierXMP,'w');      # instanciation de l'objet Fichier de la classe file
+# fichierXMP = 'GypsyPno.xmp';
+# # création et ouverture du fichier test.txt en mode write 'w' (écriture)
+# # si le fichier test.txt existe déjà, il est écrasé
+# Fichier = open(fichierXMP,'w');      # instanciation de l'objet Fichier de la classe file
 
-# écriture dans le fichier avec la méthode write()
-Fichier.write(str(xmp));
+# # écriture dans le fichier avec la méthode write()
+# Fichier.write(str(xmp));
 
-# fermeture du fichier avec la méthode close()
-Fichier.close();
+# # fermeture du fichier avec la méthode close()
+# Fichier.close();
 
 
