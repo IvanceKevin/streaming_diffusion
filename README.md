@@ -61,7 +61,7 @@ On peut observer les différents noeuds RDF sur le site W3 en choisissant l'opti
 Nous allons maintenant travailler sur les méta-données en format RDF pour chaque fichier son et les insérer dans les fichiers WAV correspondant.
 On utilisera la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/) pour ajouter au format XMP les méta-données dans les fichier WAV.
 
-Nous avons mit les schemas RDF de chaque musique dans le dossier **Description**
+Nous avons mit les schemas RDF de chaque musique dans le dossier **Description**.
 
 Nous avons automatisé l'ajout
 
