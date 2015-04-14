@@ -1,7 +1,0 @@
-{
-	"require": {
-		"zendframework/zendsearch": "2.0.*",
-		"zendframework/zendsearch": "dev-master",
-		"zendframework/zend-http": "2.0.*",
-	}
-}

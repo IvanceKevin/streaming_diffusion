@@ -63,5 +63,34 @@ On utilisera la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/pyt
 
 Nous avons mit les schemas RDF de chaque musique dans le dossier **Description**.
 
-Nous avons automatisé l'ajout
+Nous avons automatisé l'ajout des meta données 
+
+```
+for f in fileListWAV :
+
+	name=f.split('.', 1 )[0];
+
+	# Read file
+
+	xmpfile = XMPFiles( file_path="./Audio/"+name+".wav", open_forupdate=True );
+
+	# Get XMP from file.
+
+	xmp = xmpfile.get_xmp();
+
+	# Create Meta donnees
+
+	meta = libxmp.XMPMeta();
+
+	fic = open('./Description/'+name+'.rdf');
+
+	meta.parse_from_str(fic.read(), xmpmeta_wrap=False, input_encoding=None);
+
+	print 'file could be updated = ', xmpfile.can_put_xmp(meta);
+
+	xmpfile.put_xmp(meta);
+
+	xmpfile.close_file(close_flags=1);
+```
+
 
