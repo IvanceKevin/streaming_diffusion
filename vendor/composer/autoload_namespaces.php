@@ -16,5 +16,4 @@ return array(
     'Zend\\Filter\\' => array($vendorDir . '/zendframework/zend-filter'),
     'Zend\\Escaper\\' => array($vendorDir . '/zendframework/zend-escaper'),
     'ZendSearch' => array($vendorDir . '/zendframework/zendsearch/library'),
-    'EasyRdf_' => array($vendorDir . '/easyrdf/easyrdf/lib'),
 );
