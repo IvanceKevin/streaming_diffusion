@@ -61,11 +61,7 @@ On peut observer les différents noeuds RDF sur le site W3 en choisissant l'opti
 Nous allons maintenant travailler sur les méta-données en format RDF pour chaque fichier son et les insérer dans les fichiers WAV correspondant.
 On utilisera la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/) pour ajouter au format XMP les méta-données dans les fichier WAV.
 
-Comment écrire les données est simple
+Nous avons mit les schemas RDF de chaque musique dans le dossier **Description**
 
-Ecrire "RIFF".
-enregistrer la position de fichier.
-Ecrire 4 octets de 0 de
-Ecrire tous les morceaux existants. Gardez nombre d'octets écrits.
-Ajoutez votre morceau. Soyez sûr d'obtenir le droit de chunksize. Gardez nombre d'octets écrits.
-rembobiner à la position sauvegardée. Ecrire la nouvelle taille (comme un nombre de 32 bits).
+Nous avons automatisé l'ajout
+
