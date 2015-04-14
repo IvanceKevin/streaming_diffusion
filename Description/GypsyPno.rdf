@@ -19,17 +19,35 @@
    </dc:description>
    <dc:subject>
     <rdf:Bag>
-     <rdf:li>pop</rdf:li>
-     <rdf:li>electro</rdf:li>
+     <rdf:li>Piano</rdf:li>
+     <rdf:li>Gitan</rdf:li>
+     <rdf:li>Voyage</rdf:li>
+     <rdf:li>Joie</rdf:li>
+     <rdf:li>Bonheur</rdf:li>
+     <rdf:li>Espagne</rdf:li>
+     <rdf:li>Heureux</rdf:li>
+     <rdf:li>Balkan</rdf:li>
+     <rdf:li>Passion</rdf:li>
+     <rdf:li>Jeux</rdf:li>
+     <rdf:li>Jeu</rdf:li>
+     <rdf:li>Légèreté</rdf:li>
+     <rdf:li>Positif</rdf:li>
+     <rdf:li>Liberté</rdf:li>
     </rdf:Bag>
    </dc:subject>
+   <dc:format>
+   <rdf:Alt>
+    <rdf:li xml:lang="x-default">02:26</rdf:li>
+    <rdf:li xml:lang="fr-FR">02:26</rdf:li>
+   </rdf:Alt>
+  </dc:format>
   </rdf:Description>
  </rdf:RDF>
 </x:xmpmeta>
                                                                                                     
                                                                                                     
                                                                                                     
-                                                                                                    
+                                                                                            
                                                                                                     
                                                                                                     
                                                                                                     

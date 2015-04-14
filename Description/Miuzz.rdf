@@ -19,15 +19,32 @@
    </dc:description>
    <dc:subject>
     <rdf:Bag>
-     <rdf:li>salsa</rdf:li>
-     <rdf:li>rap</rdf:li>
+     <rdf:li>Piano</rdf:li>
+     <rdf:li>Enfance</rdf:li>
+     <rdf:li>Enfant</rdf:li>
+     <rdf:li>Joie</rdf:li>
+     <rdf:li>Bonheur</rdf:li>
+     <rdf:li>Simplicité</rdf:li>
+     <rdf:li>Joie</rdf:li>
+     <rdf:li>Heureux</rdf:li>
+     <rdf:li>Pureté</rdf:li>
+     <rdf:li>Enfantin</rdf:li>
+     <rdf:li>Jeux</rdf:li>
+     <rdf:li>Jeu</rdf:li>
+     <rdf:li>Légèreté</rdf:li>
+     <rdf:li>Positif</rdf:li>
     </rdf:Bag>
    </dc:subject>
+   <dc:format>
+   <rdf:Alt>
+    <rdf:li xml:lang="x-default">01:45</rdf:li>
+    <rdf:li xml:lang="fr-FR">01:45</rdf:li>
+   </rdf:Alt>
+  </dc:format>
   </rdf:Description>
  </rdf:RDF>
 </x:xmpmeta>
-                                                                                                    
-                                                                                                    
+                                                                                      
                                                                                                     
                                                                                                     
                                                                                                     

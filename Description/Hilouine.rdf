@@ -19,10 +19,22 @@
    </dc:description>
    <dc:subject>
     <rdf:Bag>
-     <rdf:li>rnb</rdf:li>
-     <rdf:li>Reggae</rdf:li>
+     <rdf:li>Piano</rdf:li>
+     <rdf:li>Nostalgie</rdf:li>
+     <rdf:li>Pureté</rdf:li>
+     <rdf:li>Regrets</rdf:li>
+     <rdf:li>Tristesse</rdf:li>
+     <rdf:li>Paix</rdf:li>
+     <rdf:li>Amour</rdf:li>
+     <rdf:li>Solitude</rdf:li>
     </rdf:Bag>
    </dc:subject>
+   <dc:format>
+   <rdf:Alt>
+    <rdf:li xml:lang="x-default">02:04</rdf:li>
+    <rdf:li xml:lang="fr-FR">02:04</rdf:li>
+   </rdf:Alt>
+  </dc:format>
   </rdf:Description>
  </rdf:RDF>
 </x:xmpmeta>
