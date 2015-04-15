@@ -1344,6 +1344,7 @@ class UploadHandler
                 );
             }
         }
+	
         $response = array($this->options['param_name'] => $files);
         return $this->generate_response($response, $print_response);
     }

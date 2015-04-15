@@ -9,7 +9,8 @@ from libxmp.consts import *
 import libxmp, sys
 
 # Read file
-print sys.argv[1];
+#### TEST IF FILE EXIST ######
+print "filename : "+sys.argv[1];
 xmpfile = XMPFiles( file_path="./Audio/"+sys.argv[1]+".wav", open_forupdate=False )
 
 # Get XMP from file.

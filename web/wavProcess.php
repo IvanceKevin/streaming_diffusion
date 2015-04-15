@@ -9,7 +9,7 @@ function wavProcess($index, $doc, $documentPath) {
 	);
 	
 	//APPEL DU FICHIER PYTHON
-	exec('python ../xmpParse.py',$res, $retcode);
+	exec('python ../xmpParse.py '.$fileName,$res, $retcode);
 
 	// Title	
 	$title = $res[0];
