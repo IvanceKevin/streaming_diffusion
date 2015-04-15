@@ -1,7 +1,7 @@
 #!/usr/bin/php -Cq
 
 <?php
-require_once "~/../../zendsearch/vendor/autoload.php";
+require_once "../vendor/autoload.php";
 
 if (count($argv) == 3) {
 	$indexName = $argv[1];

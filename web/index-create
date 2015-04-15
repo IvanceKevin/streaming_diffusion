@@ -1,7 +1,7 @@
 #!/usr/bin/php -Cq
 
 <?php
-require_once "~/../vendor/autoload.php";
+require_once "../vendor/autoload.php";
 
 if(count($argv) == 2) {
 	$exists = false;

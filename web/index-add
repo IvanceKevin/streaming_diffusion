@@ -1,7 +1,8 @@
 #!/usr/bin/php -Cq
 
 <?php
-require_once "~/../vendor/autoload.php";
+require_once "../vendor/autoload.php";
+require_once "./wavProcess.php";
 
 if (count($argv) == 3) {
 	$indexName = $argv[1];
@@ -31,8 +32,8 @@ if (count($argv) == 3) {
 
 	// Création du document à partir du document fourni et ajout dans l'index
 	switch($extension) {
-		case 'wav':	$doc = \ZendSearch\Lucene\Document;
-				wavProcess($index, $doc, $documentPath);
+		case 'wav':	$doc = new \ZendSearch\Lucene\Document;
+				wavProcess($index, $doc, $documentName);
 					break;
 	}
 
