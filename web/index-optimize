@@ -1,0 +1,21 @@
+#!/usr/bin/php -Cq
+
+<?php
+require_once "~/../../zendsearch/vendor/autoload.php";
+
+if(count($argv) == 2) {
+	$indexName = $argv[1];
+	
+	// Vérification si l'index existe
+	try {
+		$index = \ZendSearch\Lucene\Lucene::open($indexName); 
+	} catch (Exception $e) {
+		throw new Exception("L'index " . $indexName . " n'existe pas " , 1);
+	}
+
+	$index->optimize();
+}
+else {
+	throw new Exception("Veuillez fournir un index existant", 1);
+}
+	
