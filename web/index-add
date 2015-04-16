@@ -1,7 +1,11 @@
 #!/usr/bin/php -Cq
 
 <?php
+<<<<<<< HEAD
 require_once "../../../vendor/autoload.php";
+=======
+require_once "../vendor/autoload.php";
+>>>>>>> 2353a3b861e45aa1d7a9ab8681aeee0521746912
 require_once "./wavProcess.php";
 
 if (count($argv) == 3) {
@@ -26,7 +30,11 @@ if (count($argv) == 3) {
 	}
 
 	// Vérifie si le fichier existe
+<<<<<<< HEAD
 	if(!file_exists("./Audio/".$documentName)) {
+=======
+	if(!file_exists($documentName)) {
+>>>>>>> 2353a3b861e45aa1d7a9ab8681aeee0521746912
 		throw new Exception("Le fichier " . $documentName . " n'existe pas", 1);
 	}
 
@@ -41,8 +49,14 @@ if (count($argv) == 3) {
 		$index->addDocument($doc);
 	}
 
+<<<<<<< HEAD
 } else {
 	throw new Exception("Veuillez fournir un index et un document existant ".$argv[2], 1);
+=======
+}
+else {
+	throw new Exception("Veuillez fournir un index et un document existant", 1);
+>>>>>>> 2353a3b861e45aa1d7a9ab8681aeee0521746912
 }
 
 

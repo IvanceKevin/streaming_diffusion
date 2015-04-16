@@ -1,7 +1,11 @@
 #!/usr/bin/php -Cq
 
 <?php
+<<<<<<< HEAD
 require_once "../../../vendor/autoload.php";
+=======
+require_once "../vendor/autoload.php";
+>>>>>>> 2353a3b861e45aa1d7a9ab8681aeee0521746912
 
 if (count($argv) == 3) {
 	$indexName = $argv[1];

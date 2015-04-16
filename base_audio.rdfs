@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:m="http://my-music.org#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:tag="http://www.musicscreen.be/musique-libre-de-droit/Tags#"
+>
+  <rdf:Description rdf:about="http://my-music.org#Time">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Title">
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Description">
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Balkan">
+    <tag:name>Balkan</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f6334e154e012466990fedebc345d92ffb2">
+    <m:Time>2.04</m:Time>
+    <rdf:type rdf:resource="http://my-music.org#Song"/>
+    <m:Title>Hilouine</m:Title>
+    <m:Description>Musique libre de droit au piano. Musique douce et nostalgique, un tempo lent en 3 temps ( valse ), avec un changement fréquent d'harmonie, et donnant une impression de pureté. Elle illustrera à merveille des scènes nostalgiques ou tristes, des moments de paix et de sérenité.</m:Description>
+    <m:Keyword rdf:nodeID="ub9bL58C11"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub9bL64C11">
+    <rdf:_7 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Heureux"/>
+    <rdf:_6 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Espagne"/>
+    <rdf:_5 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Bonheur"/>
+    <rdf:_2 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Gitan"/>
+    <rdf:_3 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Voyage"/>
+    <rdf:_4 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Joie"/>
+    <rdf:_1 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Piano"/>
+    <rdf:_8 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Balkan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f6334e154e012466990fedebc345d92ffb3">
+    <m:Time>2.26</m:Time>
+    <m:Description>MMusique libre de droit au piano. Musique avec des sonorités gypsy, un tempo rythmé empreinté aux musiques balkaniques, et donnant une impression de fête, de joie. Elle illustrera à merveille des scènes de fête, scènes nocturne, la passion, la légèreté et la joie de vivre.</m:Description>
+    <m:Title>GypsyPno</m:Title>
+    <m:Keyword rdf:nodeID="ub9bL64C11"/>
+    <rdf:type rdf:resource="http://my-music.org#Song"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Keyword">
+    <rdfs:domain rdf:resource="http://my-music.org#Song"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Solitude">
+    <tag:name>Solitude</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub9bL58C11">
+    <rdf:_4 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Regrets"/>
+    <rdf:_5 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Tristesse"/>
+    <rdf:_3 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Purete"/>
+    <rdf:_8 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Solitude"/>
+    <rdf:_2 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Notalgie"/>
+    <rdf:_6 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Paix"/>
+    <rdf:_7 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Amour"/>
+    <rdf:_1 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Piano"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Heureux">
+    <tag:name>Heureux</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Bonheur">
+    <tag:name>Bonheur</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub9bL52C11">
+    <rdf:_3 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Pouvoir"/>
+    <rdf:_2 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Force"/>
+    <rdf:_6 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Energie"/>
+    <rdf:_5 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Liberte"/>
+    <rdf:_1 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Mystique"/>
+    <rdf:_4 rdf:resource="http://www.musicscreen.be/musique-libre-de-droit/Tags#Voyage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Piano">
+    <tag:name>Piano</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Amour">
+    <tag:name>Amour</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f6334e154e012466990fedebc345d92ffb1">
+    <m:Time>4.11</m:Time>
+    <m:Title>Luiz</m:Title>
+    <m:Description>Musique libre de droit dans le style electro, avec synthétiseurs numériques, boites à rythme et synthétiseurs analogiques. Un grand travail de sound design a été réalisé sur ce titre, avec l'utilisation de filtres résonants, de plusieurs techniques de synthèse sonore. Pour la partie acoustique et électrique, notons l'utilisation de bruitages de pièces métalliques tout au long du morceau, et l'utilisation de deux guitares éléctriques avec effet de saturation OverDrive.</m:Description>
+    <rdf:type rdf:resource="http://my-music.org#Song"/>
+    <m:Keyword rdf:nodeID="ub9bL52C11"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Pouvoir">
+    <tag:name>Pouvoir</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Nostalgie">
+    <tag:name>Nostalgie</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Paix">
+    <tag:name>Paix</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Voyage">
+    <tag:name>Voyage</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Liberte">
+    <tag:name>Liberte</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Mystique">
+    <tag:name>Mystique</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Tristesse">
+    <tag:name>Tristesse</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Joie">
+    <tag:name>Joie</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Energie">
+    <tag:name>Energie</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Purete">
+    <tag:name>Purete</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Force">
+    <tag:name>Force</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Regrets">
+    <tag:name>Regrets</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Espagne">
+    <tag:name>Espagne</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#KeyWord">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Song">
+    <rdfs:subClassOf rdf:resource="http://my-music.org#Multimedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.musicscreen.be/musique-libre-de-droit/Tags#Gitan">
+    <tag:name>Gitan</tag:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://my-music.org#Multimedia">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+</rdf:RDF>
+
