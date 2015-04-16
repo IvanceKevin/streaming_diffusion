@@ -1,15 +1,15 @@
 <?php
 
-function wavProcess($index, $doc, $documentPath) {
+function wavProcess($index, $doc, $documentName) {
 
-	$fileName = basename($documentPath);
+	$fileName = explode('.',$documentName)[0];
 	$fileNameField = \ZendSearch\Lucene\Document\Field::text(
 		'filename',
 		$fileName
 	);
 	
 	//APPEL DU FICHIER PYTHON
-	exec('python ./xmpParse.py '.$fileName,$res, $retcode);
+	exec('python ./xmpParse.py '.$documentName,$res, $retcode);
 
 	// Title	
 	$title = $res[0];
