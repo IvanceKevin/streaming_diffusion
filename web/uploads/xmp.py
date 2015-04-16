@@ -10,12 +10,12 @@ from libxmp.consts import *
 import libxmp
 import os
 
-fileListWAV=os.listdir("./Audio/");
+fileListWAV=os.listdir("./");
 
 for f in fileListWAV :
 	name=f.split('.', 1 )[0];
 	# Read file
-	xmpfile = XMPFiles( file_path="./Audio/"+name+".wav", open_forupdate=True );
+	xmpfile = XMPFiles( file_path="./"+name+".wav", open_forupdate=True );
 
 	# Get XMP from file.
 	xmp = xmpfile.get_xmp();
@@ -34,7 +34,7 @@ for f in fileListWAV :
 #print 'bag2 = ',meta.append_array_item(libxmp.consts.XMP_NS_DC, 'subject','electro')
 
 	#print meta
-	fic = open('./Description/'+name+'.rdf');
+	fic = open('../../Description/'+name+'.rdf');
 	meta.parse_from_str(fic.read(), xmpmeta_wrap=False, input_encoding=None);
 
 	print 'file could be updated = ', xmpfile.can_put_xmp(meta);

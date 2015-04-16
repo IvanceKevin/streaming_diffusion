@@ -10,13 +10,13 @@ from libxmp.consts import *
 import libxmp
 import os
 
-	name=f.split('.', 1 )[0];
-	# Read file
-	xmpfile = XMPFiles( file_path="./GypsyPno.wav", open_forupdate=True );
+	
+# Read file
+xmpfile = XMPFiles( file_path="./GypsyPno.wav", open_forupdate=True );
 
-	# Get XMP from file.
-	xmp = xmpfile.get_xmp();
+# Get XMP from file.
+xmp = xmpfile.get_xmp();
 
-	print xmp;
+print xmp;
 
 
