@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+
+body {
+  padding-top: 60px;
+  background-image:url(../img/wallpaper.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.img-header{
+    margin-top: 6px;
+}
+
+
+
+
+
+.row{
+	background-color:green;
+}

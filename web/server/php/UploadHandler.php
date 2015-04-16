@@ -43,9 +43,9 @@ class UploadHandler
     function __construct($options = null, $initialize = true, $error_messages = null) {
         $this->response = array();
         $this->options = array(
-	'script_url' => $this->get_full_url().'/',
-            'upload_dir' => '../../../Audio/',
-            'upload_url' => $this->get_full_url().'../../../Audio/',
+            'script_url' => $this->get_full_url().'/',
+            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/Audio/',
+            'upload_url' => $this->get_full_url().'/Audio/',
             'user_dirs' => false,
             'mkdir_mode' => 0755,
             'param_name' => 'files',
@@ -151,6 +151,8 @@ class UploadHandler
             ),
             'print_response' => true
         );
+
+
         if ($options) {
             $this->options = $options + $this->options;
         }
@@ -1344,7 +1346,6 @@ class UploadHandler
                 );
             }
         }
-	
         $response = array($this->options['param_name'] => $files);
         return $this->generate_response($response, $print_response);
     }

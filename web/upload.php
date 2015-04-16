@@ -6,11 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <![endif]-->
 <meta charset="utf-8">
-<title>jQuery File Upload Demo - AngularJS version</title>
+<title>Streaming diffusion - Upload WAV</title>
 <meta name="description" content="File Upload widget with multiple file selection, drag&amp;drop support, progress bars, validation and preview images, audio and video for AngularJS. Supports cross-domain, chunked and resumable file uploads and client-side image resizing. Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap styles -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 <!-- Generic page styles -->
 <link rel="stylesheet" href="css/style.css">
 <!-- blueimp Gallery styles -->
@@ -29,18 +29,21 @@
 </style>
 </head>
 <body>
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse">
+            <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-fixed-top .navbar-collapse navbar-inverse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="https://github.com/blueimp/jQuery-File-Upload">Streaming Diffusion</a>
+			
+		<img  class="img-header"src="../img/AudioEditor.png" alt="Logo_minia" height="35" width="35">
+             <a class="navbar-brand navbar-inverse" href="./index.php">
+			Streaming Diffusion</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-inverse">
             </ul>
         </div>
     </div>
@@ -52,13 +55,7 @@
         <li><a href="upload.php">Upload</a></li>
         
     </ul>
-    <br>
-    <blockquote>
-        <p>File Upload widget with multiple file selection, drag&amp;drop support, progress bars, validation and preview images, audio and video for AngularJS.<br>
-        Supports cross-domain, chunked and resumable file uploads and client-side image resizing.<br>
-        Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.</p>
-    </blockquote>
-    <br>
+   
     <!-- The file upload form used as target for the file upload widget -->
     <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data" data-ng-app="demo" data-ng-controller="DemoFileUploadController" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
         <!-- Redirect browsers with JavaScript disabled to the origin page -->
@@ -93,7 +90,7 @@
         </div>
         <!-- The table listing the files available for upload/download -->
         <table class="table table-striped files ng-cloak">
-            <tr data-ng-repeat="file in queue" data-ng-class="{'processing': file.$processing()}">
+            <tr data-ng-repeat="file in queue" data-ng-class=" tr-= {'processing': file.$processing()}">
                 <td data-ng-switch data-on="!!file.thumbnailUrl">
                     <div class="preview" data-ng-switch-when="true">
                         <a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery><img data-ng-src="{{file.thumbnailUrl}}" alt=""></a>
@@ -132,16 +129,7 @@
         </table>
     </form>
     <br>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Pied de page</h3>
-        </div>
-        <div class="panel-body">
-            <ul>
-                <li></li>
-            </ul>
-        </div>
-    </div>
+    <
 </div>
 <!-- The blueimp Gallery widget -->
 <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
