@@ -10,7 +10,7 @@ import libxmp, sys
 
 # Read file
 #### TEST IF FILE EXIST ######
-xmpfile = XMPFiles( file_path="./Audio/"+sys.argv[1], open_forupdate=False )
+xmpfile = XMPFiles( file_path="./uploads/"+sys.argv[1], open_forupdate=False )
 
 # Get XMP from file.
 xmp = xmpfile.get_xmp();
