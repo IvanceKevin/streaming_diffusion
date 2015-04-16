@@ -1,0 +1,33 @@
+#!/usr/bin/php -Cq
+
+<?php
+require_once "../../../vendor/autoload.php";
+
+if (count($argv) == 3) {
+	$indexName = $argv[1];
+	$request = $argv[2];
+
+	// Vérification si l'index existe
+	try {
+		$index = \ZendSearch\Lucene\Lucene::open($indexName); 
+	} catch (Exception $e) {
+		throw new Exception("L'index " . $indexName . " n'existe pas " , 1);
+	}
+	// Requête
+	try {
+
+		$query = \ZendSearch\Lucene\Search\QueryParser::parse($request);
+		$find = $index->find($query);
+
+		foreach($find as $hit) {
+			echo $hit->title . PHP_EOL . $hit->score . PHP_EOL;
+		}
+
+
+	} catch (Exception $e) {
+		throw new Exception("Requete invalide : " . PHP_EOL . $e, 1);
+	}
+}
+else {
+	throw new Exception("Veuillez fournir un index existant et une requête de recherche valide", 1);
+}

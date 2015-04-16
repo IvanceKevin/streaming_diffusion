@@ -1,0 +1,49 @@
+#!/usr/bin/php -Cq
+
+<?php
+require_once "../../../vendor/autoload.php";
+require_once "./wavProcess.php";
+
+if (count($argv) == 3) {
+	$indexName = $argv[1];
+	$documentName = $argv[2];
+
+	$extensionsValide = ['wav'];
+
+	// Vérification si l'index existe
+	try {
+		$index = \ZendSearch\Lucene\Lucene::open($indexName); 
+	} catch (Exception $e) {
+		throw new Exception("L'index " . $indexName . " n'existe pas " , 1);
+	}
+
+	$tabDocumentName = explode('.', $documentName);
+	$extension = $tabDocumentName[count($tabDocumentName)-1];
+
+	// Vérifie si l'extension du document est valide
+	if(!in_array($extension, $extensionsValide)) {
+		throw new Exception("L'extension du document n'est pas valide", 1);
+	}
+
+	// Vérifie si le fichier existe
+	if(!file_exists("./Audio/".$documentName)) {
+		throw new Exception("Le fichier " . $documentName . " n'existe pas", 1);
+	}
+
+	// Création du document à partir du document fourni et ajout dans l'index
+	switch($extension) {
+		case 'wav':	$doc = new \ZendSearch\Lucene\Document;
+				wavProcess($index, $doc, $documentName);
+					break;
+	}
+
+	if($doc) {
+		$index->addDocument($doc);
+	}
+
+} else {
+	throw new Exception("Veuillez fournir un index et un document existant ".$argv[2], 1);
+}
+
+
+

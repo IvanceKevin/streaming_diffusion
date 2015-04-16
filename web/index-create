@@ -1,0 +1,23 @@
+#!/usr/bin/php -Cq
+
+<?php
+require_once "../../../vendor/autoload.php";
+
+if(count($argv) == 2) {
+	$exists = false;
+
+	try {
+		\ZendSearch\Lucene\Lucene::open($argv[1]); 
+		$exists = true;
+	} catch (Exception $e) {
+		$index = \ZendSearch\Lucene\Lucene::create($argv[1]);
+		print "index " . $argv[1] . " créé" . PHP_EOL;
+	}
+
+	if($exists) {
+		throw new Exception("L'index " . $argv[1] . " existe déjà" . PHP_EOL, 1);
+	}
+}
+else {
+	throw new Exception("Veuillez fournir un nom d'index à créer", 1);
+}
