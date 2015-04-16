@@ -9,6 +9,7 @@ from libxmp.consts import *
 import libxmp, sys
 
 # Read file
+print sys.argv[1];
 #### TEST IF FILE EXIST ######
 xmpfile = XMPFiles( file_path="./uploads/"+sys.argv[1], open_forupdate=False )
 
