@@ -26,7 +26,7 @@ Nous avons récupérer 3 fichiers musicaux dans la catégorie Piano:
 
 Pour les convertir en WAV nous avons utilisés un site en ligne : [audio.online-convert](http://audio.online-convert.com/fr/convertir-en-wav).
 
-Nous avons regroupé les musiques dans le dossier **Audio**.
+Nous avons regroupé les musiques dans le dossier **web/uploads**.
 
 Un fichier **WAV** se compose d’un entête qui contient pas mal de meta données. Cet entête a été optimisé pour prendre peu de place.
 
@@ -42,7 +42,7 @@ Nous avons définit les **données importantes** pour les musiques :
 
 	- Tags
 
-Pour réaliser les méta-données RDF, on a préféré le construire en **N3** et le **convertir en RDFS** et ensuite le visualiser par un validateur RDF.
+Pour réaliser les méta-données RDF, on a préféré le construire en **N3** et le **convertir en RDF** et ensuite le visualiser par un validateur RDF.
 
 Le fichier RDF est : base_audio.rdfs
 
@@ -63,13 +63,14 @@ On utilisera la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/pyt
 
 Nous avons mit les schemas RDF de chaque musique dans le dossier **Description**.
 
-Nous avons automatisé l'ajout des meta données 
+Nous avons automatisé l'ajout des meta données :
 
 ```
+fileListWAV=os.listdir("./uploads/");
 for f in fileListWAV :
 	name=f.split('.', 1 )[0];
 	# Read file
-	xmpfile = XMPFiles( file_path="./Audio/"+name+".wav", open_forupdate=True );
+	xmpfile = XMPFiles( file_path="./uploads/"+name+".wav", open_forupdate=True );
 	# Get XMP from file.
 	xmp = xmpfile.get_xmp();
 	# Create Meta donnees
@@ -81,4 +82,16 @@ for f in fileListWAV :
 	xmpfile.close_file(close_flags=1);
 ```
 
+- On récupère dans une liste tout les fichiers du dossier **uploads/**.
 
+- On parse le fichier pour récupérer que le nom.
+
+- On lit le fichier.
+
+- On récupère les meta données.
+
+- On créait notre méta données en prenant le fichier description RDF associé.
+
+(le fichier WAV et le fichier RDF doit être du même nom ).
+
+- On l'enregistre dans le fichier WAV puis on ferme le fichier.
