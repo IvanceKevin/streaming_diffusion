@@ -274,6 +274,9 @@ Le serveur audio local écoute sur le port 7890 et si un client se connecte il r
 
 Le client recevra le flux de données au fur et à mesure sur les hauts-parleurs.
 
+![structure](./img/streaming.png "Schema Streaming local")
+
+
 Pour tester vos HP (sortie casque) à partir d’un fichier wav à partir du terminal :
 
 ```
