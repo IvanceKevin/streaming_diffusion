@@ -5,6 +5,8 @@ streaming_diffusion
 - [ConversionMP3-WAV](#conversionmp3-wav)
 - [DefinitionRDF](#definitionrdf)
 - [MetadonneesWAV](#metadonneeswav)
+- [Upload](#upload)
+- [IndexationZendLucene](#indexationzendlucene)
 - [StreamingWAV](#streamingwav)
 
 ## Introduction
@@ -118,7 +120,7 @@ Nous avons trouvé un premier projet [git](https://github.com/blueimp/jQuery-Fil
 
 La deuxième interface retenue, également un projet [git](https://github.com/nervgh/angular-file-upload) nous a posé moins de soucis pour l'intégration.
 
-## Indexation ZendLucene
+## IndexationZendLucene
 
 L'indexation se décompose en deux étapes :
 - Création d'un index
@@ -261,11 +263,6 @@ echo '</ul>';
 ?>
 ```
 
-	
-
-
-
-
 ## StreamingWAV
 
 En ce qui concerne le streaming de music, nous avons programmé un server et un client en langage C en local. On peut considérer que notre server propose un streaming virtual par l'intermédiaire du http.
@@ -290,5 +287,51 @@ paramètre la commande qui veut un accès au périphérique.
 padsp ./web/Stream/client_audio localhost ./web/Stream/abc.wav
 ```
 
+Sur notre sitre nous avons juste à choisit de le lancer en PHP : 
+
+```
+shell_exec("padsp ./Stream/client_audio localhost ../uploads/". $_GET['name']);
+```
+padsp est serveur de son PulseAudio.
+
+
+Explication du fichier server_audio.c :
+
+```
+		     	buf[(2*bin)%LINELENGTH]=aby;
+		     	buf[(2*bin+1)%LINELENGTH]=bby;
+		     	if (bin!=0 && (2*bin)%LINELENGTH==0)
+		        	send(new_sockfd,buf,LINELENGTH,0);
+		  
+		        }
+
+```
+- On remplit le buffer avec les données : 8 bits de poids faibles suivis des 8 autres : buf sera ensuite envoyé au HP ou sur le flux à destination du client
+
+- L'astuce est de lire le flux de données : et d'envoyer les données par paquet de 1024 
+
+(Il est donc inutile de réserver un buffer complet pour la lecture du fichier). 
+		     		    
+
+
+Explication du fichier client_audio.c :
+
+```
+send_string(sockfd, strcat(argv[2], "\r\n"));
+while((n=fread(buf, sizeof(char), LINELENGTH, fdesc)))
+{
+	
+	status = write(fdson, buf, LINELENGTH);
+	if (status == -1)
+		perror("SOUND_PCM_SYNC ioctl failed");
+}
+fclose(fd);
+printf("Arret du serveur\n");
+exit(1);
+
+```
+- On place dans le tableau buf le contenu d'un paquet reçu dans le  tampon de la socket fdesc.
+
+- On écrit sur le flux fdson le contenu de buf pour l'envoie aux haut-parleurs.
 
 
