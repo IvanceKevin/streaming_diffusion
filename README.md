@@ -99,7 +99,7 @@ for f in fileListWAV :
 
 Afin de récupérer les métadonnées contenues dans le fichier wav précédemment insérée on a également utilisé la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/).
 
-'''
+```
 print sys.argv[1];
 xmpfile = XMPFiles( file_path="./uploads/"+sys.argv[1], open_forupdate=False )
 
@@ -109,9 +109,14 @@ print xmp.get_localized_text( libxmp.consts.XMP_NS_DC, 'title', 'fr', 'fr-FR');
 count = xmp.count_array_items( libxmp.consts.XMP_NS_DC, 'subject');
 for i in range(1, count+1):
 	print xmp.get_array_item( libxmp.consts.XMP_NS_DC, 'subject', i).keys()[0];
-'''
+```
 
 ## Upload
 
+Nous avons trouvé un premier projet [git](https://github.com/blueimp/jQuery-File-Upload/wiki/Setup) que l'on a voulu intégré au notre pour gérer l'upload de fichier. Seulement le projet étant conséquant, il nous a été trop du de finir l'intégration dans les délais. Une version de cette interface est encore présente dans la branche master/
+
+La deuxième interface retenue, également un projet [git](https://github.com/nervgh/angular-file-upload) nous a posé moins de soucis pour l'intégration.
+
+## Indexation ZendLucene
 
 
