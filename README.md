@@ -5,6 +5,7 @@ streaming_diffusion
 - [ConversionMP3-WAV](#conversionmp3-wav)
 - [DefinitionRDF](#definitionrdf)
 - [MetadonneesWAV](#metadonneeswav)
+- [StreamingWAV](#streamingwav)
 
 ## Introduction
 
@@ -118,5 +119,30 @@ Nous avons trouvé un premier projet [git](https://github.com/blueimp/jQuery-Fil
 La deuxième interface retenue, également un projet [git](https://github.com/nervgh/angular-file-upload) nous a posé moins de soucis pour l'intégration.
 
 ## Indexation ZendLucene
+
+
+
+
+## StreamingWAV
+
+En ce qui concerne le streaming de music, nous avons programmé un server et un client en langage C en local. On peut considérer que notre server propose un streaming virtual par l'intermédiaire du http.
+
+Le serveur audio local écoute sur le port 7890 et si un client se connecte il renvoie la music choisit sur le site sous la forme d'un flux raw. Le Client audio local envoie une requête sur le port 7890 de localhost en GET par son nom WAV en HTTP/1/1\r\n
+
+Le client recevra le flux de données au fur et à mesure sur les hauts-parleurs.
+
+Pour tester vos HP (sortie casque) à partir d’un fichier wav à partir du terminal :
+
+```
+sox bbc.wav –t ossdsp /dev/dsp
+```
+
+Pour accéder au périphérique /dev/dsp, utilisez padsp. Il s’utilise en spécifiant en
+paramètre la commande qui veut un accès au périphérique.
+
+```
+padsp ./web/Stream/client_audio localhost ./web/Stream/abc.wav
+```
+
 
 
