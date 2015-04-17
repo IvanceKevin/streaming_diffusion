@@ -100,11 +100,9 @@ for f in fileListWAV :
 Afin de récupérer les métadonnées contenues dans le fichier wav précédemment insérée on a également utilisé la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/).
 
 '''
-# Read file
 print sys.argv[1];
 xmpfile = XMPFiles( file_path="./uploads/"+sys.argv[1], open_forupdate=False )
 
-# Get XMP from file.
 xmp = xmpfile.get_xmp();
 print xmp.get_localized_text( libxmp.consts.XMP_NS_DC, 'title', 'fr', 'fr-FR');
 
