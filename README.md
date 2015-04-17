@@ -98,7 +98,7 @@ for f in fileListWAV :
 - On l'enregistre dans le fichier WAV puis on ferme le fichier.
 
 
-Afin de récupérer les métadonnées contenues dans le fichier wav précédemment insérée on a également utilisé la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/).
+Afin de récupérer les métadonnées contenues dans le fichier wav précédemment insérée on a également utilisé la bibliothèque [Python_XMP_Toolkit](https://code.google.com/p/python-xmp-toolkit/), c'est le fichier xmpParse.py:
 
 ```
 print sys.argv[1];
@@ -119,6 +119,149 @@ Nous avons trouvé un premier projet [git](https://github.com/blueimp/jQuery-Fil
 La deuxième interface retenue, également un projet [git](https://github.com/nervgh/angular-file-upload) nous a posé moins de soucis pour l'intégration.
 
 ## Indexation ZendLucene
+
+L'indexation se décompose en deux étapes :
+- Création d'un index
+- Ajout d'un document à un index existant
+
+Ensuite on a l'optimisation de l'index (non implémenté ici) et la recherche.
+
+Nous avons décidé de décomposer chaque action dans un fichier php distinct.
+
+Voici la création de l'index :
+```
+$exists = false;
+try {
+	\ZendSearch\Lucene\Lucene::open($argv[1]); 
+	$exists = true;
+} catch (Exception $e) {
+	$index = \ZendSearch\Lucene\Lucene::create($argv[1]);
+	print "index " . $argv[1] . " créé" . PHP_EOL;
+}
+
+if($exists) {
+	throw new Exception("L'index " . $argv[1] . " existe déjà" . PHP_EOL, 1);
+}
+```
+
+L'ajout d'un document se décompose en trois phases, l'appel au fichier index-add :
+```
+$extensionsValide = ['wav'];
+
+// Vérification si l'index existe
+try {
+	$index = \ZendSearch\Lucene\Lucene::open($indexName); 
+} catch (Exception $e) {
+	throw new Exception("L'index " . $indexName . " n'existe pas " , 1);
+}
+
+$tabDocumentName = explode('.', $documentName);
+$extension = $tabDocumentName[count($tabDocumentName)-1];
+
+// Vérifie si l'extension du document est valide
+if(!in_array($extension, $extensionsValide)) {
+	throw new Exception("L'extension du document n'est pas valide", 1);
+}
+
+// Vérifie si le fichier existe
+if(!file_exists("./uploads/".$documentName)) {
+	throw new Exception("Le fichier " . $documentName . " n'existe pas", 1);
+}
+
+// Création du document à partir du document fourni et ajout dans l'index
+switch($extension) {
+	case 'wav':	$doc = new \ZendSearch\Lucene\Document;
+			wavProcess($index, $doc, $documentName);
+				break;
+}
+
+if($doc) {
+	$index->addDocument($doc);
+}
+```
+
+Puis l'appel au fichier wavProcess, qui appel le fichier python xmpParse.py pour récupérer les métadonnées et les ajouter ensuite au document et à l'index:
+```
+<?php
+function wavProcess($index, $doc, $documentName) {
+
+	$fileName = explode('.',$documentName)[0];
+	$fileNameField = \ZendSearch\Lucene\Document\Field::text(
+		'filename',
+		$fileName
+	);
+	
+	//APPEL DU FICHIER PYTHON
+	exec('python ./xmpParse.py '.$documentName,$res, $retcode);
+
+	// Title	
+	$title = $res[0];
+	$titleField = \ZendSearch\Lucene\Document\Field::text(
+		'title',
+		$title
+	);
+
+	// echo "Title : " . $title[0] . PHP_EOL;
+
+	// Subject
+	for ($i = 1; $i < count($res); $i++) {
+		$subject = $res[$i];
+		$subjectField = \ZendSearch\Lucene\Document\Field::text(
+			$subject,
+			$subject
+		);
+		$doc->addField($subjectField);
+	}
+
+	// echo "Subject : " . $subject[0] . PHP_EOL;
+
+
+	$doc->addField($fileNameField);
+	$doc->addField($titleField);
+	$index->addDocument($doc);
+}
+```
+
+La recherche s'effectue assez simplement ensuite à l'aide du fichier index-search.php qui est appelé lors de la recherche:
+```
+<?php
+require_once "../vendor/autoload.php";
+echo '<ul>';
+
+	if(isset($_GET['search']))
+	{ 
+		$indexName = 'audio_index';
+		$request = $_GET['search'];
+
+		// Vérification si l'index existe
+		try {
+			$index = \ZendSearch\Lucene\Lucene::open($indexName); 
+		} catch (Exception $e) {
+			throw new Exception("L'index " . $indexName . " n'existe pas " , 1);
+		}
+		// Requête
+		try {
+
+			$query = \ZendSearch\Lucene\Search\QueryParser::parse($request);
+			$find = $index->find($query);
+			foreach($find as $hit) {
+				echo $hit->title.' '.$hit->score;
+				echo '<li><a href="./stream.php?name='.$hit->title.'">' . $hit->title . '</a></li>';	
+			}
+
+
+		} catch (Exception $e) {
+			throw new Exception("Requete invalide : " . PHP_EOL . $e, 1);
+		}
+	}
+	else {
+		throw new Exception("Veuillez fournir un index existant et une requête de recherche valide", 1);
+}
+echo '</ul>';
+?>
+```
+
+	
 
 
 
